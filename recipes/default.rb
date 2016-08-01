@@ -10,8 +10,8 @@
 node.default['firefox']['version'] = node['firefox-install']['version']
 
 case node['platform_family']
-  execute 'update' do
-  command 'sudo apt-get update'
+execute 'apt update' do
+  command '/usr/sbin/apachectl configtest'
 end
 end
 
