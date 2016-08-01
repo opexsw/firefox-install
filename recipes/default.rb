@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-node.default['firefox-install']['version'] = node['firefox']['version']
+node.default['firefox']['version'] = node['firefox-install']['version']
 
 case node['platform_family']
   when 'debian'
