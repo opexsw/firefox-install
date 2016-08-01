@@ -12,9 +12,9 @@ node.default['firefox']['version'] = node['firefox-install']['version']
 
 case node['platform_family']
   when 'debian'
-    apt_update 'apt update' do
-      action :update
-    end
+   apt_update 'apt update' do
+      action :nothing
+    end.run_action(:update)
 end
 
 include_recipe 'firefox::default'	
