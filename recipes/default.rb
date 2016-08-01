@@ -9,10 +9,12 @@
 
 node.default['firefox']['version'] = node['firefox-install']['version']
 
+
 case node['platform_family']
-execute 'apt update' do
-  command '/usr/sbin/apachectl configtest'
-end
+  when 'debian'
+    apt_update 'apt update' do
+      action :update
+    end
 end
 
 include_recipe 'firefox::default'	
